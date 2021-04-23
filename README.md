@@ -9,23 +9,11 @@ Use Python to explore data related to bike share systems for three major cities 
 
 ### Files used
 chicago.csv
-
-<<<<<<< HEAD
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-||||||| 2f05c20
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
-=======
 new_york_city.csv
-
 washington.csv
 
-
 ### Credits
-Online Resources Referenced:
+Online Resources Referenced
 - https://www.askpython.com/python/examples/python-user-input
 - https://www.shanelynn.ie/select-data-pandas-iloc-loc-rows-and-columns-dataframe/
 - https://stackoverflow.com/questions/19377969/combine-two-columns-of-text-in-dataframe-in-pandas-python
->>>>>>> documentation
