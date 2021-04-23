@@ -37,14 +37,33 @@ def get_filters():
     print('\nHello! Let\'s explore some US bikeshare data!')
 
     print('\nNote: To end this program, type "end"')
+<<<<<<< HEAD
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
+||||||| 2f05c20
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    
+=======
+
+    # TO DO: get user input for one city (chicago, new york city, washington). This will return the data for one city. HINT: Use a while loop to handle invalid inputs
+
+>>>>>>> documentation
     city_name = ''
 
     while city_name.lower() not in CITY_DATA:
+<<<<<<< HEAD
 
         city_name = input("\nWhat city are you interested in analyzing? (E.g. Input either chicago, new york city, washington). To end this program, type 'end'\n")
 
+||||||| 2f05c20
+        
+        city_name = input("\nWhat city are you interested in analyzing? (E.g. Input either chicago, new york city, washington)\n")
+        
+=======
+
+        city_name = input("\nWhat city are you interested in analyzing? (E.g. Input either chicago, new york city, washington)\n")
+
+>>>>>>> documentation
         if city_name.lower() in CITY_DATA:
             #We were able to get the name of the city to analyze data.
             city = CITY_DATA[city_name.lower()]
@@ -56,14 +75,32 @@ def get_filters():
             #We were not able to get the name of the city to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the city. Input either chicago, new york city or washington.\n")
 
+<<<<<<< HEAD
     # TO DO: get user input for month (all, january, february, ... , june)
 
+||||||| 2f05c20
+    # TO DO: get user input for month (all, january, february, ... , june)
+    
+=======
+    # TO DO: get user input for one month (all, january, february, ... , june). This will get data for the specified month.
+
+>>>>>>> documentation
     month_name = ''
 
     while month_name.lower() not in MONTH_DATA:
+<<<<<<< HEAD
 
         month_name = input("\nWhat is the name of the month to filter data? (E.g. Input january, february, ... , june). To end this program, type 'end'\n")
 
+||||||| 2f05c20
+        
+        month_name = input("\nWhat is the name of the month to filter data? (E.g. Input january, february, ... , june)\n")
+        
+=======
+
+        month_name = input("\nWhat is the name of the month to filter data? (E.g. Input january, february, ... , june)\n")
+
+>>>>>>> documentation
         if month_name.lower() in MONTH_DATA:
             #We were able to get the name of the month to analyze data.
             month = month_name.lower()
@@ -75,13 +112,29 @@ def get_filters():
             #We were not able to get the name of the month to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the month to filter data, input january, february, ... , june.\n")
 
+<<<<<<< HEAD
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
 
+||||||| 2f05c20
+    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    
+=======
+    # TO DO: get user input for one day of the week (all, monday, tuesday, ... sunday). This will return data for the specified day.
+
+>>>>>>> documentation
     day_name = ''
 
     while day_name.lower() not in DAY_DATA:
+<<<<<<< HEAD
         day_name = input("\nWhat is the name of the day to filter data? (E.g. Input monday, tuesday, ... sunday). To end this program, type 'end'\n")
 
+||||||| 2f05c20
+        day_name = input("\nWhat is the name of the day to filter data? (E.g. Input monday, tuesday, ... sunday)\n")
+       
+=======
+        day_name = input("\nWhat is the name of the day to filter data? (E.g. Input monday, tuesday, ... sunday)\n")
+
+>>>>>>> documentation
         if day_name.lower() in DAY_DATA:
             #We were able to get the name of the month to analyze data.
             day = day_name.lower()
