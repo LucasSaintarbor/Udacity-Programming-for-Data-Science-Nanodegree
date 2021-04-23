@@ -6,7 +6,7 @@ Created on Mon Mar 01 17:38:16 2021
 
 # Online Resources Referenced
 # https://www.askpython.com/python/examples/python-user-input
-# https://www.shanelynn.ie/select-data-pandas-iloc-loc-rows-and-columns-dataframe/ 
+# https://www.shanelynn.ie/select-data-pandas-iloc-loc-rows-and-columns-dataframe/
 # https://stackoverflow.com/questions/19377969/combine-two-columns-of-text-in-dataframe-in-pandas-python
 
 import time
@@ -33,70 +33,70 @@ def get_filters():
         (str) day - name of the day of week to filter by
     """
     '''
-    
+
     print('\nHello! Let\'s explore some US bikeshare data!')
-    
+
     print('\nNote: To end this program, type "end"')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     city_name = ''
-    
+
     while city_name.lower() not in CITY_DATA:
-        
-        city_name = input("\nWhat city are you interested in analyzing? (E.g. Input either chicago, new york city, washington)\n")
-        
+
+        city_name = input("\nWhat city are you interested in analyzing? (E.g. Input either chicago, new york city, washington). To end this program, type 'end'\n")
+
         if city_name.lower() in CITY_DATA:
             #We were able to get the name of the city to analyze data.
             city = CITY_DATA[city_name.lower()]
-            
+
         elif city_name.lower() == 'end':
             raise SystemExit
-        
+
         else:
             #We were not able to get the name of the city to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the city. Input either chicago, new york city or washington.\n")
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    
+
     month_name = ''
-    
+
     while month_name.lower() not in MONTH_DATA:
-        
-        month_name = input("\nWhat is the name of the month to filter data? (E.g. Input january, february, ... , june)\n")
-        
+
+        month_name = input("\nWhat is the name of the month to filter data? (E.g. Input january, february, ... , june). To end this program, type 'end'\n")
+
         if month_name.lower() in MONTH_DATA:
             #We were able to get the name of the month to analyze data.
             month = month_name.lower()
-        
+
         elif month_name.lower() == 'end':
             raise SystemExit
-        
+
         else:
             #We were not able to get the name of the month to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the month to filter data, input january, february, ... , june.\n")
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    
+
     day_name = ''
-   
+
     while day_name.lower() not in DAY_DATA:
-        day_name = input("\nWhat is the name of the day to filter data? (E.g. Input monday, tuesday, ... sunday)\n")
-       
+        day_name = input("\nWhat is the name of the day to filter data? (E.g. Input monday, tuesday, ... sunday). To end this program, type 'end'\n")
+
         if day_name.lower() in DAY_DATA:
             #We were able to get the name of the month to analyze data.
             day = day_name.lower()
-       
+
         elif day_name.lower() == 'end':
             raise SystemExit
-        
+
         else:
             #We were not able to get the name of the month to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the day to filter data, input monday, tuesday, ... sunday.\n")
-    
-             
+
+
     print('-'*40)
     return city, month, day
-    
+
 
 def load_data(city, month, day):
     '''
@@ -122,7 +122,7 @@ def load_data(city, month, day):
 
     # filter by month if applicable
     if month != 'all':
-        # use the index of the months list to get the corresponding int   
+        # use the index of the months list to get the corresponding int
         month = MONTH_DATA.index(month)
 
         # filter by month to create the new dataframe
@@ -135,8 +135,8 @@ def load_data(city, month, day):
         df = df.loc[df['Weekday'] == day]
 
     return df
-  
-    
+
+
 def time_stats(df):
     """Displays statistics on the most frequent times of travel.
     Args:
@@ -243,44 +243,44 @@ def display_raw_data(df):
     Args:
         (DataFrame) df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     #print(df.head())
     #row_num = 0
     view_raw_data = ' '
-    
+
 
     start_time = time.time()
-        
+
     while view_raw_data.lower() not in YES_NO:
-        
+
        view_raw_data = input('\nWould you like to view some of the raw data? Enter yes or no.\n')
-    
+
     while view_raw_data.lower() in YES_NO:
-        
+
        if view_raw_data.lower() == 'no':
             return
-        
+
        elif view_raw_data.lower() == 'yes':
-                        
+
             print('\n The first 20 rows of the data is displayed below: \n')
             print(df.iloc[0:5])
             print('\n Getting your Stats now \n')
             print("\nThis took %s seconds.\n" % (time.time() - start_time))
             print('-'*40)
             break
-            
+
        elif view_raw_data.lower() == 'end':
             raise SystemExit
-        
+
        else:
             #We were not able to get the name of the city to analyze data so we continue the loop.
             print("Sorry we were not able to get the name of the city. Input either chicago, new york city or washington.\n")
             break
-                    
+
 
 def main():
     while True:
-        
+
         city, month, day = get_filters()
         df = load_data(city, month, day)
         display_raw_data(df)
@@ -289,10 +289,10 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df, city)
-        
-        
+
+
         restart = input('\nWould you like to restart or end your analysis? Enter yes to restart or no to end your analysis.\n')
-        
+
         while True:
             if restart.lower() == 'yes':
                 break
