@@ -263,7 +263,7 @@ def display_raw_data(df):
        elif view_raw_data.lower() == 'yes':
 
             print('\n The first 20 rows of the data is displayed below: \n')
-            print(df.iloc[0:5])
+            print(df.iloc[0:20])
             print('\n Getting your Stats now \n')
             print("\nThis took %s seconds.\n" % (time.time() - start_time))
             print('-'*40)
